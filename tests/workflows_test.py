@@ -103,8 +103,7 @@ def test_load_repository_recipes_reports_invalid_entries(monkeypatch, minimal):
     assert result.recipes == [expected_recipe]
     assert len(result.invalid_entries) == 1
     assert result.invalid_entries[0].recipe_id == "broken"
-    assert result.invalid_entries[0].reason == "authorComment: Field required"
-
+    assert result.invalid_entries[0].reason == "preparationTime: Field required"
 
 def test_sync_with_mealie_skips_duplicates_and_logs_other_failures(
     monkeypatch, minimal, caplog
